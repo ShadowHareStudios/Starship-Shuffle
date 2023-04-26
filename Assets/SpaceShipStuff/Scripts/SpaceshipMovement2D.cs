@@ -1,19 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class SpaceshipMovement2D : MonoBehaviour
 {
-  
-
+    //Rotation Vars
+    [SerializeField] float rotationSpeed = 0.5f;
+    [SerializeField] float reAlignSpeedMultiplier;
+    [SerializeField] float maximumX, minimumX;
+    [SerializeField] float maximumY, minimumY;
+    [SerializeField] float maximumRotation, minimumRotation;
+    private float newAlignment;
     private float horizontalDir;
 
+    
     public void Move(InputAction.CallbackContext context)
     {
         horizontalDir = context.ReadValue<Vector2>().x;
     }
+    
     
    
         enum MoveType
@@ -46,6 +54,7 @@ public class SpaceshipMovement2D : MonoBehaviour
         // Start is called before the first frame update
         void Start()
         {
+        
             rb2d = GetComponent<Rigidbody2D>();
 
             if (moveType == MoveType.FORCE) accelStyle = AccelerateUsingForce;
@@ -65,10 +74,11 @@ public class SpaceshipMovement2D : MonoBehaviour
                 accelFactor = 0f;
             }
 
-            axisX = Input.GetAxisRaw("Horizontal");
-            axisY = Input.GetAxisRaw("Vertical");
+        axisX = horizontalDir;
+        axisY = horizontalDir;
 
-           
+           Vector2 movementDirection = new Vector2(horizontalDir, 0);
+            movementDirection.Normalize();
 
             float accelForce = maxVel / accelFactor;
 
@@ -102,8 +112,18 @@ public class SpaceshipMovement2D : MonoBehaviour
                 rb2d.velocity -= rb2d.velocity.normalized * maxVel * Time.deltaTime * playerSlowDown;
             }
 
-            if (debugVelocityTimeScale)
+            //Clamp position of player
+            Vector3 posClamp = transform.position;
+            posClamp.x = Mathf.Clamp(posClamp.x,minimumX,maximumX);
+            posClamp.y = Mathf.Clamp(posClamp.y, minimumY, maximumY);
+                
+            transform.position = posClamp;
+
+        if (debugVelocityTimeScale)
                 Debug.Log("Velocity: " + rb2d.velocity.magnitude + "Timescale: " + Time.timeScale);
+
+        
+        
         }
 
         // Returns a float with reversed time scaling
@@ -121,7 +141,21 @@ public class SpaceshipMovement2D : MonoBehaviour
         {
             rb2d.velocity += (Vector2)direction_ * (accelFactor * Time.unscaledDeltaTime);
         }
+    void FixedUpdate()
+    {
+        //Rotate with Movement
+        if (isMoving)
+        {
+            newAlignment = Mathf.Clamp(newAlignment, minimumRotation, maximumRotation);
+            transform.Rotate(Vector3.forward, rotationSpeed * -horizontalDir);
+        }
+        else
+        {
+            transform.Rotate(Vector3.forward, rotationSpeed* reAlignSpeedMultiplier * -transform.rotation.z);
+        }
+        
 
-       
-    
+    }
+
+
 }
