@@ -218,46 +218,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Starship_1
       objectReference: {fileID: 0}
-    - target: {fileID: 3687760031694925988, guid: 7d3c73bc493620e44900c21558dcbacb, type: 3}
-      propertyPath: maximumX
-      value: 62
-      objectReference: {fileID: 0}
-    - target: {fileID: 3687760031694925988, guid: 7d3c73bc493620e44900c21558dcbacb, type: 3}
-      propertyPath: maximumY
-      value: -3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3687760031694925988, guid: 7d3c73bc493620e44900c21558dcbacb, type: 3}
-      propertyPath: minimumX
-      value: -62
-      objectReference: {fileID: 0}
-    - target: {fileID: 3687760031694925988, guid: 7d3c73bc493620e44900c21558dcbacb, type: 3}
-      propertyPath: minimumY
-      value: -28
-      objectReference: {fileID: 0}
-    - target: {fileID: 3687760031694925988, guid: 7d3c73bc493620e44900c21558dcbacb, type: 3}
-      propertyPath: reAlignSpeed
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 3687760031694925988, guid: 7d3c73bc493620e44900c21558dcbacb, type: 3}
-      propertyPath: rotationSpeed
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 3687760031694925988, guid: 7d3c73bc493620e44900c21558dcbacb, type: 3}
-      propertyPath: reAlignSpeedMultiplier
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3687760031694925990, guid: 7d3c73bc493620e44900c21558dcbacb, type: 3}
-      propertyPath: ColorModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3687760031694925990, guid: 7d3c73bc493620e44900c21558dcbacb, type: 3}
-      propertyPath: ColorBySpeedModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3687760031694925991, guid: 7d3c73bc493620e44900c21558dcbacb, type: 3}
-      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3687760031694925992, guid: 7d3c73bc493620e44900c21558dcbacb, type: 3}
       propertyPath: m_RootOrder
       value: 1

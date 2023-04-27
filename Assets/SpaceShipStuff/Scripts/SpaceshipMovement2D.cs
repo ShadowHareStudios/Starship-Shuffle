@@ -5,6 +5,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D))]
+
+[RequireComponent(typeof(Collider2D))]
 public class SpaceshipMovement2D : MonoBehaviour
 {
     //Rotation Vars
@@ -13,7 +15,8 @@ public class SpaceshipMovement2D : MonoBehaviour
     [SerializeField] float maximumX, minimumX;
     [SerializeField] float maximumY, minimumY;
     [SerializeField] float maximumRotation, minimumRotation;
-    private float newAlignment;
+    public float newAlignment;
+     float rotationInput;
     private float horizontalDir;
 
     
@@ -76,6 +79,7 @@ public class SpaceshipMovement2D : MonoBehaviour
 
         axisX = horizontalDir;
         axisY = horizontalDir;
+        rotationInput += -horizontalDir * rotationSpeed * Time.deltaTime;
 
            Vector2 movementDirection = new Vector2(horizontalDir, 0);
             movementDirection.Normalize();
@@ -122,9 +126,12 @@ public class SpaceshipMovement2D : MonoBehaviour
         if (debugVelocityTimeScale)
                 Debug.Log("Velocity: " + rb2d.velocity.magnitude + "Timescale: " + Time.timeScale);
 
-        
-        
-        }
+        rotationInput = Mathf.Clamp(rotationInput, minimumRotation, maximumRotation);
+       
+        newAlignment = rotationInput;
+
+
+    }
 
         // Returns a float with reversed time scaling
         public float TimeFactoredFloat(float f)
@@ -143,15 +150,25 @@ public class SpaceshipMovement2D : MonoBehaviour
         }
     void FixedUpdate()
     {
+
+
+     
+
         //Rotate with Movement
         if (isMoving)
         {
-            newAlignment = Mathf.Clamp(newAlignment, minimumRotation, maximumRotation);
-            transform.Rotate(Vector3.forward, rotationSpeed * -horizontalDir);
+
+
+
+            transform.eulerAngles = new Vector3(0f, 0f, newAlignment);
+           
+
+            
         }
         else
         {
-            transform.Rotate(Vector3.forward, rotationSpeed* reAlignSpeedMultiplier * -transform.rotation.z);
+            transform.Rotate(Vector3.forward, rotationSpeed * reAlignSpeedMultiplier * -transform.rotation.z);
+            rotationInput = horizontalDir * rotationSpeed * Time.deltaTime;
         }
         
 
