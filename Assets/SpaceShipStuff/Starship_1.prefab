@@ -58,13 +58,14 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 2.0272632, y: -0.44550276}
-      - {x: 0.13266233, y: 1.559738}
-      - {x: -1.8406696, y: -0.42730308}
-      - {x: -1.8406649, y: -1.4347253}
-      - {x: -0.70657927, y: -1.8310337}
-      - {x: 0.9391755, y: -1.8358536}
-      - {x: 2.0181122, y: -1.4340098}
+    - - {x: 1.8709971, y: -0.008632183}
+      - {x: 0.44599622, y: 1.9536438}
+      - {x: -0.35942146, y: 1.9498444}
+      - {x: -1.8186892, y: -0.035197973}
+      - {x: -1.8139594, y: -1.9990773}
+      - {x: -1.0020084, y: -1.992178}
+      - {x: 1.0018423, y: -1.9969978}
+      - {x: 1.8665719, y: -2.0018961}
 --- !u!114 &929505224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,6 +94,7 @@ GameObject:
   - component: {fileID: 3687760031694925985}
   - component: {fileID: 3687760031694925990}
   - component: {fileID: 2857674658881503416}
+  - component: {fileID: 5365469101156596975}
   m_Layer: 3
   m_Name: Starship_1
   m_TagString: Player
@@ -108,7 +110,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3687760031694925984}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.56, z: 0}
+  m_LocalPosition: {x: 0, y: -17, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -203,12 +205,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 30
   reAlignSpeedMultiplier: 0.25
-  maximumX: 62
-  minimumX: -62
+  maximumX: 55
+  minimumX: -55
   maximumY: -3
   minimumY: -28
-  maximumRotation: 85
-  minimumRotation: -85
+  maximumRotation: 55
+  minimumRotation: -55
   newAlignment: 0
   debugVelocityTimeScale: 0
   cameraZoomDelay: 0
@@ -1013,7 +1015,7 @@ ParticleSystem:
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 0
     donutRadius: 0.2
-    m_Position: {x: 0.13, y: -1.9, z: -0.96}
+    m_Position: {x: 0.02, y: -1.9, z: -0.96}
     m_Rotation: {x: 45, y: 0, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 0
@@ -5099,6 +5101,32 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.11736822, y: -0.33114648}
-  m_Size: {x: 1.4815817, y: 2.848084}
+  m_Offset: {x: 0.037510693, y: -0.11181283}
+  m_Size: {x: 1.2458512, y: 3.2867513}
   m_Direction: 0
+--- !u!61 &5365469101156596975
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3687760031694925984}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.034608603, y: -0.7699976}
+  m_SpriteTilingProperty:
+    border: {x: 0.23200001, y: 0.158, z: 0.18200001, w: 0.25}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.096, y: 4.096}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.6696014, y: 1.5498829}
+  m_EdgeRadius: 0

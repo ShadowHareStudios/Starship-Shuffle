@@ -11,17 +11,21 @@ public class StarshipCollisions2D : MonoBehaviour
     [SerializeField] GameObject Asteroid;
     [SerializeField] float nearMissBonus;
 
+    private void Start()
+    {
+        if(Spaceship == null) { Debug.Log("You forgot to add a Ship reference"); }
+        if (NearMissCheck == null) { Debug.Log("You forgot to add a NearMiss reference"); }
+    }
 
-    
     public void OnParticleCollision(GameObject other)
     {
-        if (other == Spaceship) { Debug.Log("Hello Critical Hit"); }
+        if (other == Spaceship) { Debug.Log("Hello Critical Hit, Reset Score"); }
         scoreController.ResetScore();
     }
 
     public void OnParticleTrigger()
     {
-        { Debug.Log("Hello NearMiss"); }
+        { Debug.Log("Hello NearMiss + " + nearMissBonus); }
         scoreController.ScoreBoost(nearMissBonus);
     }
 

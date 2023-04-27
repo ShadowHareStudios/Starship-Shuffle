@@ -130,6 +130,14 @@ public class SpaceshipMovement2D : MonoBehaviour
        
         newAlignment = rotationInput;
 
+        if(transform.position.x == minimumX)
+        {
+            ExitScreenBoundsL();
+        }
+        if (transform.position.x == maximumX)
+        {
+            ExitScreenBoundsR();
+        }
 
     }
 
@@ -137,6 +145,14 @@ public class SpaceshipMovement2D : MonoBehaviour
         public float TimeFactoredFloat(float f)
         {
             return f + f / Time.timeScale;
+        }
+        void ExitScreenBoundsL()
+        {
+            transform.position = new Vector3((maximumX) - 1 , transform.position.y, transform.position.z);
+        }
+        void ExitScreenBoundsR()
+        {
+            transform.position = new Vector3((minimumX) + 1, transform.position.y, transform.position.z);
         }
 
         void AccelerateUsingForce(Vector3 direction_)
@@ -157,7 +173,7 @@ public class SpaceshipMovement2D : MonoBehaviour
         //Rotate with Movement
         if (isMoving)
         {
-
+            newAlignment = rotationInput - transform.rotation.z;
 
 
             transform.eulerAngles = new Vector3(0f, 0f, newAlignment);
