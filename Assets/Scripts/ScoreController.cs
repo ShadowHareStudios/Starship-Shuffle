@@ -24,15 +24,20 @@ public class ScoreController : MonoBehaviour
     {
         currentScore += scoreMultiplier * Time.deltaTime;
         
-        scoreText.text = "Current Score : " + currentScore.ToString();
+        scoreText.text = "Current Score : " + Mathf.Round(currentScore).ToString();
     }
 
-    
-    public void ResetScore()
+    public void ScorePenalty(float pointPenalty)
     {
-        currentScore= 0f;
+        currentScore -= pointPenalty;
     }
-    public void ScoreBoost()
+
+    public void ScoreReset()
+    {
+        currentScore = 0f;
+    }
+
+    public void ScoreBonus()
     {
 
         { Debug.Log("Hello NearMiss + " + nearMissBonus); }

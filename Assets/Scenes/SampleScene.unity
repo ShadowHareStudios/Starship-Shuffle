@@ -217,6 +217,7 @@ GameObject:
   m_Component:
   - component: {fileID: 231898943}
   - component: {fileID: 231898944}
+  - component: {fileID: 231898945}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -255,6 +256,19 @@ MonoBehaviour:
   nearMissBonus: 25
   scoreText: {fileID: 1461160787}
   playerCanvas: {fileID: 1145146965}
+--- !u!114 &231898945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231898942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03c638475ad6b1d4f92b7e4f82a44801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLives: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -5170,6 +5184,7 @@ MonoBehaviour:
   scoreController: {fileID: 231898944}
   Spaceship: {fileID: 1266702954}
   NearMissCheck: {fileID: 228424243}
+  pointPenalty: 0
 --- !u!1 &1021444742
 GameObject:
   m_ObjectHideFlags: 0

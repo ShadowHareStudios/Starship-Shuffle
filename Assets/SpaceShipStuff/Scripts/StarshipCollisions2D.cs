@@ -8,6 +8,7 @@ public class StarshipCollisions2D : MonoBehaviour
     [SerializeField] ScoreController scoreController;
     [SerializeField] GameObject Spaceship;
     [SerializeField] NearMissTrigger NearMissCheck;
+    [SerializeField] float pointPenalty;
    
    
 
@@ -20,12 +21,12 @@ public class StarshipCollisions2D : MonoBehaviour
     public void OnParticleCollision(GameObject other)
     {
         if (other == Spaceship) { Debug.Log("Hello Critical Hit, Reset Score"); }
-        scoreController.ResetScore();
+        scoreController.ScoreReset();
     }
 
     public void OnParticleTrigger()
     {
-        scoreController.ScoreBoost();
+        scoreController.ScoreBonus();
     }
 
 }
