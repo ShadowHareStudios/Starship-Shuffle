@@ -228,7 +228,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3687760031694925988, guid: 7d3c73bc493620e44900c21558dcbacb, type: 3}
       propertyPath: accelFactor
-      value: 15
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 3687760031694925988, guid: 7d3c73bc493620e44900c21558dcbacb, type: 3}
       propertyPath: maximumRotation

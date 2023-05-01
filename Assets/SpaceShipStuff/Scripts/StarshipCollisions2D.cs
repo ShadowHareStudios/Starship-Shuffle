@@ -8,8 +8,8 @@ public class StarshipCollisions2D : MonoBehaviour
     [SerializeField] ScoreController scoreController;
     [SerializeField] GameObject Spaceship;
     [SerializeField] NearMissTrigger NearMissCheck;
-    [SerializeField] GameObject Asteroid;
-    [SerializeField] float nearMissBonus;
+   
+   
 
     private void Start()
     {
@@ -25,8 +25,7 @@ public class StarshipCollisions2D : MonoBehaviour
 
     public void OnParticleTrigger()
     {
-        { Debug.Log("Hello NearMiss + " + nearMissBonus); }
-        scoreController.ScoreBoost(nearMissBonus);
+        scoreController.ScoreBoost();
     }
 
 }

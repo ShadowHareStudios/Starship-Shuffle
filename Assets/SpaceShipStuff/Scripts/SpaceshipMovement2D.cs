@@ -43,7 +43,7 @@ public class SpaceshipMovement2D : MonoBehaviour
         [Header("Move Settings")]
         [Tooltip("Factor of max velocity")] public float accelFactor;
         public float maxVel;
-        [SerializeField] MoveType moveType = MoveType.FORCE;
+        [SerializeField] MoveType moveType = MoveType.VELOCITY;
 
         Rigidbody2D rb2d;
         float axisX;
@@ -60,8 +60,7 @@ public class SpaceshipMovement2D : MonoBehaviour
         
             rb2d = GetComponent<Rigidbody2D>();
 
-            if (moveType == MoveType.FORCE) accelStyle = AccelerateUsingForce;
-            else if (moveType == MoveType.VELOCITY) accelStyle = AccelerateUsingVelocity;
+            if (moveType == MoveType.VELOCITY) accelStyle = AccelerateUsingVelocity;
 
             if (maxVel <= 0f) maxVel = 25f;
             if (cameraZoomDelay <= 0f) cameraZoomDelay = 0.25f;
@@ -153,11 +152,6 @@ public class SpaceshipMovement2D : MonoBehaviour
         void ExitScreenBoundsR()
         {
             transform.position = new Vector3((minimumX) + 1, transform.position.y, transform.position.z);
-        }
-
-        void AccelerateUsingForce(Vector3 direction_)
-        {
-            rb2d.AddForce(direction_ * (maxVel / accelFactor) / Time.unscaledDeltaTime);
         }
 
         void AccelerateUsingVelocity(Vector3 direction_)

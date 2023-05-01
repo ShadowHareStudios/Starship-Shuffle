@@ -252,6 +252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreMultiplier: 2
+  nearMissBonus: 25
   scoreText: {fileID: 1461160787}
   playerCanvas: {fileID: 1145146965}
 --- !u!1 &519420028
@@ -5169,8 +5170,6 @@ MonoBehaviour:
   scoreController: {fileID: 231898944}
   Spaceship: {fileID: 1266702954}
   NearMissCheck: {fileID: 228424243}
-  Asteroid: {fileID: 566066767}
-  nearMissBonus: 25
 --- !u!1 &1021444742
 GameObject:
   m_ObjectHideFlags: 0
@@ -5225,7 +5224,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 92ce03a00f21c044581c569ac51b7de8, type: 2}
+  - {fileID: 2100000, guid: bff08d0d7a0301e488290239857845fd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

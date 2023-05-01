@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ScoreController : MonoBehaviour
 {
     [SerializeField] int scoreMultiplier;
+    [SerializeField] int nearMissBonus;
     float currentScore;
     [SerializeField] Text scoreText;
     [SerializeField] Canvas playerCanvas;
@@ -26,12 +27,15 @@ public class ScoreController : MonoBehaviour
         scoreText.text = "Current Score : " + currentScore.ToString();
     }
 
+    
     public void ResetScore()
     {
         currentScore= 0f;
     }
-    public void ScoreBoost(float bonus)
+    public void ScoreBoost()
     {
-        currentScore = currentScore + bonus; 
+
+        { Debug.Log("Hello NearMiss + " + nearMissBonus); }
+        currentScore +=   nearMissBonus; 
     }
 }

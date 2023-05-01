@@ -214,7 +214,7 @@ MonoBehaviour:
   newAlignment: 0
   debugVelocityTimeScale: 0
   cameraZoomDelay: 0
-  accelFactor: 10
+  accelFactor: 17
   maxVel: 2
   moveType: 1
   playerSlowDown: 0
