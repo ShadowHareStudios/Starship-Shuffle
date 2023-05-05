@@ -269,6 +269,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxLives: 0
+--- !u!1 &475982122 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 475982122, guid: 7d3c73bc493620e44900c21558dcbacb, type: 3}
+  m_PrefabInstance: {fileID: 2021510029}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &475982125
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475982122}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,7 +493,7 @@ ParticleSystem:
   startDelay:
     serializedVersion: 2
     minMaxState: 0
-    scalar: 0
+    scalar: 20
     minScalar: 0
     maxCurve:
       serializedVersion: 2
@@ -527,7 +553,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 8
+      scalar: 15
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -580,7 +606,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3
+      scalar: 2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -696,7 +722,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3
+      scalar: 4
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -1012,14 +1038,14 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 80
+    maxNumParticles: 20
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.3
+      scalar: 0.75
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -1078,8 +1104,8 @@ ParticleSystem:
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 47.2
-    m_Position: {x: 0.000001265664, y: -6.8609385, z: -18.429003}
-    m_Rotation: {x: 0.003767244, y: 180, z: -0.00002875038}
+    m_Position: {x: 0.000001519354, y: -6.86067, z: 0}
+    m_Rotation: {x: 0.0041729524, y: 180, z: -0.000031768795}
     m_Scale: {x: 1.3996819, y: 0.00000008156118, z: 0.55286366}
     placementMode: 0
     m_MeshMaterialIndex: 0
@@ -1159,7 +1185,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0.03
     radius:
-      value: 34.904446
+      value: 37.47366
       mode: 0
       spread: 0
       speed:
@@ -4197,7 +4223,7 @@ ParticleSystem:
     collidesWith:
       serializedVersion: 2
       m_Bits: 4294967295
-    maxCollisionShapes: 1
+    maxCollisionShapes: 100
     quality: 0
     voxelSize: 0.5
     collisionMessages: 1
@@ -5160,7 +5186,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 566066767}
   m_LocalRotation: {x: -0.7070799, y: 0.006170608, z: 0.006170608, w: 0.7070799}
-  m_LocalPosition: {x: 0, y: 70, z: -10}
+  m_LocalPosition: {x: 0, y: 70, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5180,7 +5206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreController: {fileID: 231898944}
-  Spaceship: {fileID: 1266702954}
+  Spaceship: {fileID: 475982122}
   NearMissCheck: {fileID: 228424243}
   pointPenalty: 0
 --- !u!1 &1021444742
@@ -5275,7 +5301,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1021444742}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 128, y: 512, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -5397,11 +5423,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &1266702954 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3687760031694925984, guid: 7d3c73bc493620e44900c21558dcbacb, type: 3}
-  m_PrefabInstance: {fileID: 2021510029}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1461160785
 GameObject:
   m_ObjectHideFlags: 0
@@ -5514,9 +5535,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreController: {fileID: 231898944}
-  Spaceship: {fileID: 1266702954}
+  Spaceship: {fileID: 475982122}
   NearMissCheck: {fileID: 228424243}
-  pointPenalty: 0
+  pointPenalty: 1
 --- !u!199 &1728623532
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -5672,7 +5693,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 8
+      scalar: 9
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -5725,7 +5746,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3
+      scalar: 1.5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -6157,7 +6178,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 80
+    maxNumParticles: 40
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
@@ -6223,7 +6244,7 @@ ParticleSystem:
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 47.2
-    m_Position: {x: 0.000001265664, y: -6.8609385, z: -18.429003}
+    m_Position: {x: 0.000001265664, y: -6.8609385, z: 0}
     m_Rotation: {x: 0.003767244, y: 180, z: -0.00002875038}
     m_Scale: {x: 1.3996819, y: 0.00000008156118, z: 0.55286366}
     placementMode: 0
@@ -9342,7 +9363,7 @@ ParticleSystem:
     collidesWith:
       serializedVersion: 2
       m_Bits: 4294967295
-    maxCollisionShapes: 1
+    maxCollisionShapes: 100
     quality: 0
     voxelSize: 0.5
     collisionMessages: 1
@@ -10305,7 +10326,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1728623530}
   m_LocalRotation: {x: -0.7070799, y: 0.006170608, z: 0.006170608, w: 0.7070799}
-  m_LocalPosition: {x: 0, y: 70, z: -10}
+  m_LocalPosition: {x: 0, y: 70, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10323,6 +10344,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Starship_1
       objectReference: {fileID: 0}
+    - target: {fileID: 3687760031694925988, guid: 7d3c73bc493620e44900c21558dcbacb, type: 3}
+      propertyPath: accelFactor
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 3687760031694925988, guid: 7d3c73bc493620e44900c21558dcbacb, type: 3}
+      propertyPath: playerSlowDown
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3687760031694925992, guid: 7d3c73bc493620e44900c21558dcbacb, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -10337,7 +10366,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3687760031694925992, guid: 7d3c73bc493620e44900c21558dcbacb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3687760031694925992, guid: 7d3c73bc493620e44900c21558dcbacb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10366,6 +10395,26 @@ PrefabInstance:
     - target: {fileID: 3687760031694925992, guid: 7d3c73bc493620e44900c21558dcbacb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3687760031694925994, guid: 7d3c73bc493620e44900c21558dcbacb, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3687760031694925994, guid: 7d3c73bc493620e44900c21558dcbacb, type: 3}
+      propertyPath: m_Constraints
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3687760031694925995, guid: 7d3c73bc493620e44900c21558dcbacb, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3687760031694925995, guid: 7d3c73bc493620e44900c21558dcbacb, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3687760031694925995, guid: 7d3c73bc493620e44900c21558dcbacb, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d3c73bc493620e44900c21558dcbacb, type: 3}
