@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D))]
 
-[RequireComponent(typeof(Collider2D))]
+
 public class SpaceshipMovement2D : MonoBehaviour
 {
     //Rotation Vars
@@ -17,12 +17,14 @@ public class SpaceshipMovement2D : MonoBehaviour
     [SerializeField] float maximumRotation, minimumRotation;
     public float newAlignment;
      float rotationInput;
-    private float horizontalDir;
+     float horizontalDir;
+     float verticalDir;
 
     
     public void Move(InputAction.CallbackContext context)
     {
         horizontalDir = context.ReadValue<Vector2>().x;
+        verticalDir = context.ReadValue<Vector2>().y;
     }
     
     
@@ -77,16 +79,16 @@ public class SpaceshipMovement2D : MonoBehaviour
             }
 
         axisX = horizontalDir;
-        axisY = horizontalDir;
+        axisY = verticalDir;
         rotationInput += -horizontalDir * rotationSpeed * Time.deltaTime;
 
-           Vector2 movementDirection = new Vector2(horizontalDir, 0);
+           Vector2 movementDirection = new Vector2(axisX, axisY);
             movementDirection.Normalize();
 
             float accelForce = maxVel / accelFactor;
 
-            accelStyle(new Vector2(axisX, axisY).normalized);
-
+            accelStyle(movementDirection);
+        
             // If player isnt pressing any movement keys
             if (axisX == 0f && axisY == 0f)
             {
@@ -117,26 +119,42 @@ public class SpaceshipMovement2D : MonoBehaviour
 
             //Clamp position of player
             Vector3 posClamp = transform.position;
-            posClamp.x = Mathf.Clamp(posClamp.x,minimumX,maximumX);
+            posClamp.x = Mathf.Clamp(posClamp.x, minimumX, maximumX);
             posClamp.y = Mathf.Clamp(posClamp.y, minimumY, maximumY);
                 
             transform.position = posClamp;
+        
+        //Screen Edge Wrapping
+          if (transform.position.x == minimumX)
+            {
+            ExitScreenBoundsL();
+            }
+
+          if (transform.position.x == maximumX)
+            {
+            ExitScreenBoundsR();
+            }
+
+          // vertical restriction Velocity reset
+        if(transform.position.y == minimumY)
+            {
+            rb2d.velocity = new Vector2 (rb2d.velocity.x, verticalDir);
+            }
+        if (transform.position.y == maximumY)
+            {
+            rb2d.velocity = new Vector2(rb2d.velocity.x, verticalDir);
+            }
+
 
         if (debugVelocityTimeScale)
                 Debug.Log("Velocity: " + rb2d.velocity.magnitude + "Timescale: " + Time.timeScale);
 
+        // clamp rotation and assign alignment
         rotationInput = Mathf.Clamp(rotationInput, minimumRotation, maximumRotation);
        
         newAlignment = rotationInput;
 
-        if(transform.position.x == minimumX)
-        {
-            ExitScreenBoundsL();
-        }
-        if (transform.position.x == maximumX)
-        {
-            ExitScreenBoundsR();
-        }
+      
 
     }
 
