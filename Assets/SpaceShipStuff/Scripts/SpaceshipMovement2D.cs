@@ -127,22 +127,24 @@ public class SpaceshipMovement2D : MonoBehaviour
         //Screen Edge Wrapping
           if (transform.position.x == minimumX)
             {
+            
             ExitScreenBoundsL();
             }
 
           if (transform.position.x == maximumX)
             {
+            
             ExitScreenBoundsR();
             }
 
           // vertical restriction Velocity reset
         if(transform.position.y == minimumY)
             {
-            rb2d.velocity = new Vector2 (rb2d.velocity.x, verticalDir);
+            rb2d.velocity = -rb2d.velocity.normalized;
             }
         if (transform.position.y == maximumY)
             {
-            rb2d.velocity = new Vector2(rb2d.velocity.x, verticalDir);
+            rb2d.velocity = -rb2d.velocity.normalized;
             }
 
 
