@@ -42,11 +42,11 @@ public class AudioManager : MonoBehaviour
     {
       if(SceneManager.GetActiveScene().buildIndex == 0)
         {
-            PlayMusic("MenuMusic");
+            PlayMusic("Synthwave");
         }
       else if(SceneManager.GetActiveScene().buildIndex == 1)
         {
-            PlayMusic("GameMusic");
+            PlayMusic("TestScene");
         }
     }
 

@@ -287,7 +287,7 @@ MonoBehaviour:
   - name: Synthwave
     audioClip: {fileID: 8300000, guid: d2d0e7537be7e7a4b80ed8d2ad92d7be, type: 3}
   sfxSounds: []
-  musicSource: {fileID: 0}
+  musicSource: {fileID: 960844585}
   sfxSource: {fileID: 0}
 --- !u!1 &475982122 stripped
 GameObject:
@@ -5244,7 +5244,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d2d0e7537be7e7a4b80ed8d2ad92d7be, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
