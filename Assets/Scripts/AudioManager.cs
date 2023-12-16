@@ -42,11 +42,11 @@ public class AudioManager : MonoBehaviour
     {
       if(SceneManager.GetActiveScene().buildIndex == 0)
         {
-            PlayMusic("Synthwave");
+            PlayMusic("LIL MORI");
         }
       else if(SceneManager.GetActiveScene().buildIndex == 1)
         {
-            PlayMusic("TestScene");
+            PlayMusic("Hurricane Turtle");
         }
     }
 

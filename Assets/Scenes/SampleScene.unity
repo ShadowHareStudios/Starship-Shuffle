@@ -284,8 +284,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   masterVolume: 1
   musicSounds:
-  - name: Synthwave
+  - name: Lil MORI
     audioClip: {fileID: 8300000, guid: d2d0e7537be7e7a4b80ed8d2ad92d7be, type: 3}
+  - name: Hurricane Turtle
+    audioClip: {fileID: 8300000, guid: e36ba598ea57d3040bfa3d2acb7e2ff1, type: 3}
   sfxSounds: []
   musicSource: {fileID: 960844585}
   sfxSource: {fileID: 0}
