@@ -239,6 +239,10 @@ PrefabInstance:
       value: -55
       objectReference: {fileID: 0}
     - target: {fileID: 3687760031694925988, guid: 7d3c73bc493620e44900c21558dcbacb, type: 3}
+      propertyPath: debugVelocityTimeScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3687760031694925988, guid: 7d3c73bc493620e44900c21558dcbacb, type: 3}
       propertyPath: reAlignSpeedMultiplier
       value: 0.25
       objectReference: {fileID: 0}

@@ -218,6 +218,7 @@ GameObject:
   - component: {fileID: 231898943}
   - component: {fileID: 231898944}
   - component: {fileID: 231898945}
+  - component: {fileID: 231898946}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -269,32 +270,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxLives: 0
+--- !u!114 &231898946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231898942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3623b7c091e6a824f94c67d264242163, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  masterVolume: 1
+  musicSounds:
+  - name: Track1
+    audioClip: {fileID: 8300000, guid: e36ba598ea57d3040bfa3d2acb7e2ff1, type: 3}
+  - name: Track2
+    audioClip: {fileID: 8300000, guid: d2d0e7537be7e7a4b80ed8d2ad92d7be, type: 3}
+  sfxSounds: []
+  musicSource: {fileID: 960844585}
+  sfxSource: {fileID: 0}
 --- !u!1 &475982122 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 475982122, guid: 7d3c73bc493620e44900c21558dcbacb, type: 3}
   m_PrefabInstance: {fileID: 2021510029}
   m_PrefabAsset: {fileID: 0}
---- !u!50 &475982125
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 475982122}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 7
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -5209,6 +5210,11 @@ MonoBehaviour:
   Spaceship: {fileID: 475982122}
   NearMissCheck: {fileID: 228424243}
   pointPenalty: 0
+--- !u!82 &960844585 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4739329713175151500, guid: 7d3c73bc493620e44900c21558dcbacb, type: 3}
+  m_PrefabInstance: {fileID: 2021510029}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1021444742
 GameObject:
   m_ObjectHideFlags: 0
@@ -10344,14 +10350,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Starship_1
       objectReference: {fileID: 0}
-    - target: {fileID: 3687760031694925988, guid: 7d3c73bc493620e44900c21558dcbacb, type: 3}
-      propertyPath: accelFactor
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 3687760031694925988, guid: 7d3c73bc493620e44900c21558dcbacb, type: 3}
-      propertyPath: playerSlowDown
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 3687760031694925992, guid: 7d3c73bc493620e44900c21558dcbacb, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -10395,26 +10393,6 @@ PrefabInstance:
     - target: {fileID: 3687760031694925992, guid: 7d3c73bc493620e44900c21558dcbacb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3687760031694925994, guid: 7d3c73bc493620e44900c21558dcbacb, type: 3}
-      propertyPath: m_BodyType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3687760031694925994, guid: 7d3c73bc493620e44900c21558dcbacb, type: 3}
-      propertyPath: m_Constraints
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3687760031694925995, guid: 7d3c73bc493620e44900c21558dcbacb, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3687760031694925995, guid: 7d3c73bc493620e44900c21558dcbacb, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3687760031694925995, guid: 7d3c73bc493620e44900c21558dcbacb, type: 3}
-      propertyPath: m_Color.r
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d3c73bc493620e44900c21558dcbacb, type: 3}
